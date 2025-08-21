@@ -1,1 +1,1 @@
-# mini-erp-system
+# Mini ERP System
