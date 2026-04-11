@@ -1,6 +1,6 @@
 using ERP.Application.Extensions;
 using ERP.Infrastructure.Extensions;
-using Npgsql;
+using ERP.API.Middleware;
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
@@ -20,6 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.MapControllers();
 
